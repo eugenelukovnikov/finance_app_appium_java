@@ -30,8 +30,6 @@ public class FinanceTests {
         options.setDeviceName("emulator");
         options.setApp(System.getProperty("user.dir") + "/apps/financemanager.apk");
         options.setAutomationName("UiAutomator2");
-        options.setCapability("skipDeviceInitialization", true);
-        options.setCapability("skipServerInstallation", true);
 
         options.setCapability("appWaitActivity", "org.secuso.privacyfriendlyfinance.activities.*");
         // Увеличиваем таймаут ожидания активити
