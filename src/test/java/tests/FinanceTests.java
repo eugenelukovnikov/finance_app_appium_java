@@ -7,12 +7,16 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Tag;
+import org.openqa.selenium.By;
 import screens.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import utils.AutoScreenshotExtension;
+import utils.ScreenshotUtils;
 
-
+@ExtendWith(AutoScreenshotExtension.class)
 public class FinanceTests {
     private AndroidDriver driver;
     private HomeScreen homeScreen;
@@ -38,6 +42,8 @@ public class FinanceTests {
         URL url = new URL("http://127.0.0.1:4723");
         driver = new AndroidDriver(url, options);
         System.out.println("Приложение успешно запущено!");
+
+        ScreenshotUtils.setDriver(driver);
 
         homeScreen = new OnboardingScreen(driver).skipOnboardingIfNeeded();
     }
