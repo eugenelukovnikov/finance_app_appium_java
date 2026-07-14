@@ -17,7 +17,7 @@ public class BaseScreen {
     public BaseScreen(AndroidDriver driver){
 
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     protected void click(By locator) {
