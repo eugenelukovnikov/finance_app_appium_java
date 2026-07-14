@@ -8,6 +8,8 @@ import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.interactions.Pause;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.Arrays;
 
@@ -30,6 +32,10 @@ public class HomeScreen extends BaseScreen {
     public HomeScreen(AndroidDriver driver) {
 
         super(driver);
+
+        WebDriverWait longWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        longWait.until(ExpectedConditions.visibilityOfElementLocated(addButton));
+        System.out.println("Главный экран загружен!");
     }
 
     @Step("Клик на кнопку 'Добавить'")

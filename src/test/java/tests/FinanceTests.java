@@ -34,8 +34,7 @@ public class FinanceTests {
         options.setCapability("appWaitActivity", "org.secuso.privacyfriendlyfinance.activities.*");
         // Увеличиваем таймаут ожидания активити
         options.setCapability("appWaitDuration", 30000);
-        // Явно указываем запускаемое активити
-        options.setCapability("appWaitActivity", "org.secuso.privacyfriendlyfinance.activities.*");
+
         URL url = new URL("http://127.0.0.1:4723");
         driver = new AndroidDriver(url, options);
         System.out.println("Приложение успешно запущено!");
