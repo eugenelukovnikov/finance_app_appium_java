@@ -27,6 +27,12 @@ public class TransactionFormScreen extends BaseScreen {
     public TransactionFormScreen(AndroidDriver driver) {
 
         super(driver);
+
+        if (!isEditTransactionFrameDisplayed()) {
+            System.out.println("Форма не загрузилась!");
+            throw new RuntimeException("Форма создания транзакции не открылась!");
+        }
+        System.out.println("Форма создания транзакции загружена!");
     }
 
     @Step("Проверка, что отображается форма редактирования записи")
