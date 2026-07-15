@@ -45,10 +45,10 @@ jobs:
       - name: Run tests on Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: 34
           target: google_apis
           arch: x86_64
-          profile: pixel_4
+          profile: pixel_7
           avd-name: test_avd
           disable-animations: false
           force-avd-creation: true
